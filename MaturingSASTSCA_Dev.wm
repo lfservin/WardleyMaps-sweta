@@ -1,0 +1,76 @@
+title Maturing SAST & SCA Practices 
+style wardley
+anchor Product Owner [0.97, 0.55] label [-60, -8]
+anchor Developers [0.92, 0.70] label [6, -2]
+anchor ISA [0.94, 0.81] label [0.94, 0.81]
+anchor CISO [0.95, 0.91] label [0.95, 0.91]
+
+component DevSecOps Integrable tool [0.51, 0.70] label [5, -10]
+component  Triaging assistance [0.45, 0.56] label [8, 1]
+component  Less false positive [0.62, 0.37] label [-35, 14]
+component  Exception handling [0.65, 0.21] label [8, -6]
+component  Speed up dev cycle [0.58, 0.25] label [-3c5, 14]
+component Notification critical/High vul [0.82, 0.29] label [-89, -38]
+component  SAST/SCA tool suggest/Open fixes by itself [0.65, 0.09] label [-35, 14]
+component  SAST coverage for my lang [0.77, 0.72] label [-35, 14]
+component Notification zero day vul [0.89, 0.17] label [-90, -23]
+component Visibility  [0.77, 0.87] label [10, 4]
+component Defects [0.73, 0.82] 
+component Security bugs [0.71, 0.83] 
+component SNYC [0.41, 0.78] 
+component Checkmarx [0.40, 0.89] label [13, 4]
+component Blackduck [0.41, 0.85]
+component Product Sec dashboard [0.19, 0.21] label [5, -10]
+component Opensource scan tool [0.32, 0.26] label [-10, -62]
+component Automated Templates [0.10, 0.32] label [22, 6]
+component Tool optimization assistance [0.07, 0.20] label [-9, 18]
+component Jira/SNOW [0.37, 0.35] label [-60, -8]
+component Mattermost [0.33, 0.39] label [-33, 13]
+component Jira/SNOW [0.37, 0.35] label [-60, -8]
+component Techdebt Baselining support [0.78, 0.15] label [-69, 11]
+
+Developers -> DevSecOps Integrable tool
+Developers -> Triaging assistance
+Developers -> Less false positive
+Developers -> SAST coverage for my lang
+Developers -> Speed up dev cycle
+Developers -> SAST/SCA tool suggest/Open fixes by itself
+Developers -> Exception handling
+Developers -> Notification critical/High vul
+Developers -> Notification zero day vul
+Developers -> Visibility
+Visibility -> Product Compliance
+Visibility -> Defects
+Visibility -> Security bugs
+Notification critical/High vul -> Jira/SNOW
+Notification zero day vul -> Mattermost
+Security bugs -> Product Sec dashboard
+SAST coverage for my lang -> Opensource scan tool
+
+
+DevSecOps Integrable tool -> SNYC
+DevSecOps Integrable tool -> Checkmarx
+DevSecOps Integrable tool -> Blackduck
+Product Sec dashboard -> SNYC
+Product Sec dashboard -> Checkmarx
+Product Sec dashboard -> Blackduck
+SNYC -> Automated Templates
+Checkmarx -> Automated Templates
+Blackduck -> Automated Templates
+Less false positive -> Tool optimization assistance
+Speed up dev cycle -> SAST/SCA tool suggest/Open fixes by itself
+Speed up dev cycle -> Techdebt Baselining support
+
+evolve Opensource scan tool 0.74 label [15, -19]
+evolve Techdebt Baselining support 0.55 label [18, -7]
+evolve Notification critical/High vul 0.91 label [15, -19]
+evolve Notification zero day vul 0.74 label [26, -9]
+evolve Automated Templates 0.82 label [18, -7]
+evolve SAST/SCA tool suggest/Open fixes by itself 0.82 label [18, -7]
+evolve Tool optimization assistance 0.82 label [18, -7]
+evolve Triaging assistance 0.82 label [18, -7]
+
+
+// component  Triaging assistance - Safe use of libraries
+// schield app from attacks on known vul ?
+// automatically collect SBOM 
