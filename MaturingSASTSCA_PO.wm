@@ -1,0 +1,49 @@
+title Maturing SAST & SCA Practices
+style wardley
+anchor Product Owner [0.97, 0.55] label [-60, -8]
+anchor Developers [0.92, 0.70] label [6, -2]
+anchor ISA [0.94, 0.81] label [0.94, 0.81]
+anchor CISO [0.95, 0.91] label [0.95, 0.91]
+
+component Product Compliance Req [0.78, 0.31] label [20, -9]
+component Product Compliance [0.60, 0.26] label [20, -9]
+component Visibility  [0.80, 0.43] 
+component Defects [0.69, 0.48] 
+component Security bugs [0.68, 0.57] 
+component Notification critical/High vul [0.85, 0.25] label [-89, -38]
+component Notification zero day vul [0.70, 0.30] label [-90, -23]
+component Techdebt Baselining support [0.78, 0.15] label [-69, 11]
+component Funded & Easy license process [0.73, 0.73] label [10, 7]
+
+
+// Capabilities as per PO's need
+component Product Sec dashboard [0.56, 0.17] label [-60, -8]
+component ASRG Tool/AppInsight [0.48, 0.64] label [-60, -8]
+component Jira/SNOW [0.37, 0.35] label [-60, -8]
+component Mattermost/email [0.33, 0.39] label [-33, 13]
+
+
+// Capabilities as per Dev's need
+// component JIRA service integration support [0.48, 0.33] label [-65, 6]
+// component Github technical guidance(Coverity/Blackduck) [0.37, 0.53] label [-60, -8]
+
+
+Product Owner -> Product Compliance Req
+Product Owner -> Visibility
+Visibility -> Product Compliance
+Visibility -> Defects
+Visibility -> Security bugs
+Product Owner -> Notification critical/High vul
+Product Owner -> Notification zero day vul
+Product Owner -> Techdebt Baselining support
+Product Owner -> Funded & Easy license process
+Product Compliance Req -> ASRG Tool/AppInsight
+Product Compliance -> Product Sec dashboard
+Security bugs -> Product Sec dashboard
+Notification critical/High vul -> Jira/SNOW
+Notification zero day vul -> Mattermost/email 
+
+evolve Product Sec dashboard 0.75 label [15, -19]
+evolve Techdebt Baselining support 0.55 label [18, -7]
+evolve Mattermost/email 0.55 label [36, -3]
+evolve Jira/SNOW 0.55 label [18, -7]
